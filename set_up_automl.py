@@ -1,6 +1,8 @@
 '''
 Set up AutoML experiment with the AutoML API
 https://docs.databricks.com/aws/en/machine-learning/automl/regression-train-api#setup-an-experiment-using-the-automl-api
+And see the API reference:
+https://docs.databricks.com/aws/en/machine-learning/automl/automl-api-reference 
 '''
 
 from databricks import automl
