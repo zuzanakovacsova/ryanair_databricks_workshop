@@ -11,6 +11,9 @@ The example defines the objective function objective, and calls the suggest_floa
 '''
 
 import sklearn
+import mlflow
+from mlflow.optuna.storage import MlflowStorage
+from mlflow.pyspark.optuna.study import MlflowSparkStudy
 
 def objective(trial):
     # Invoke suggest methods of a Trial object to generate hyperparameters.
@@ -38,9 +41,6 @@ def objective(trial):
 Create a shared storage for distributed optimization. With MlflowStorage, you can use MLflow Tracking Server as the storage backend.
 '''
 
-import mlflow
-from mlflow.optuna.storage import MlflowStorage
-
 experiment_id = mlflow.get_experiment_by_name(dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()).experiment_id
 
 mlflow_storage = MlflowStorage(experiment_id=experiment_id)
@@ -54,8 +54,6 @@ Create a Study, and optimize the objective function with 8 trials (8 calls of th
 Get the best parameters of the Study
 '''
 
-
-from mlflow.pyspark.optuna.study import MlflowSparkStudy
 
 mlflow_study = MlflowSparkStudy(
     study_name="spark-mlflow-tuning",
