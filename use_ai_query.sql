@@ -3,11 +3,10 @@
 
 -- Traditional models
 
--- For specific request (example can be found in the UI when you go to your serving endpoint and select USE->QUERY)
-ai_query(
-    endpoint => "your_endpoint",
-    request => "your_request_body"
-    ) AS response
+-- For specific request
+SELECT ai_query('<endpoint>',
+    request => named_struct("<column_name>", "<value>","<numerical column>",<value>
+ ), returnType => '<type, eg String>') as prediction
 
 -- For batch inference on tables, columns are input fields for your model and are selected from your table
 ai_query(
