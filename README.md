@@ -35,6 +35,8 @@ This repo has an [example](https://github.com/zuzanakovacsova/ryanair_databricks
 However, if you are going to test your app locally, you will have to set this variable, either as an environmental variable, or you can use [Databricks secrets](https://docs.databricks.com/aws/en/security/secrets/) to fetch it.
 #### Connect your app to a Lakebase instance
 If you want your app to keep state or save any of the user inputs, you can add a lakebase instance as a resource. [This example](https://github.com/zuzanakovacsova/ryanair_databricks_workshop/tree/main/streamlit-chatbot-app-with-postgres) uses the above chat app and stores the prompts and responses in a table in lakebase, also showing a history of most recent conversations.
+#### Other app tasks
+You can have your Databricks app do many different tasks, from triggering classical ML models and uploading data to triggering workflows or visualising dashboards. The [Apps Cookbook](https://github.com/databricks-solutions/databricks-apps-cookbook) has plenty of examples. You can deploy it in your own workspace by selecting a framework folder (FastAPI, Dash, Streamlit) as source code for your deployment, or use the example code in the repo itself for inspiration.
 ### Deploy your model with MLOps stacks
 [MLOps stacks](https://github.com/databricks/mlops-stacks) has a template for deploying ML models in Databricks that follow production best practices, including asset bundles, testing and deploying via GitHub actions or Azure DevOps. 
 Initial setup is not trivial (setting up of workspaces, repos, credentials...) so we recommend to deprioritise spending time on this during the workshop.
