@@ -38,7 +38,7 @@ st.title("🧱 Chatbot App")
 
 
 st.markdown(
-    "ℹ️ This is a simple example of a chatbot querying an agent."
+    "ℹ️ Talk to your agent!"
 )
 
 # Initialize chat history
@@ -51,7 +51,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("What can you do?"):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in chat message container
@@ -60,7 +60,8 @@ if prompt := st.chat_input("What is up?"):
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        # Query the Databricks serving endpoint
+        # Query the Databricks serving endpoint.
+        # Streaming as a tool calling agent goes through a list of "thoughts"
         streaming_response = client.responses.create(model=SERVING_ENDPOINT, input=st.session_state.messages, stream=True)
         resp = []
         for chunk in streaming_response:
@@ -69,9 +70,9 @@ if prompt := st.chat_input("What is up?"):
             else: 
                 resp.append(chunk.item.content[0].text)
         assistant_response = resp
-        # Non-streaming
+        # We only need the final response
         st.markdown(assistant_response[-1])
 
 
-    # Add assistant response to chat history
+    # Add final response to chat history
     st.session_state.messages.append({"role": "assistant", "content": assistant_response[-1]})
