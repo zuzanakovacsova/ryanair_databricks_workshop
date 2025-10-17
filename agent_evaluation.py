@@ -77,6 +77,11 @@ eval_dataset_2 = [
 ]
 
 # Run predefined scorers 
+
+# These scorers don't need an aswer key to my inputs. You can choose to add scorers which will compare the output to your desired
+# aswer, see Databricks documentation for more details.
+
+
 # I need an evalaution dataset: example input requests, and predict_fn, which is the app to call the llm
 mlflow.genai.evaluate(
     data=eval_dataset,
