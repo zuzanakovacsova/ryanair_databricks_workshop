@@ -6,6 +6,13 @@ Welcome to our Databricks hands-on session! These materials have all the tools a
 ### Hyperparameter tuning (optional)
 ### Register and retrieve model 
 ### Set up an online feature store
+Databricks Online Feature Stores are a high-performance, scalable solution for serving feature data to online applications and real-time machine learning models. 
+Powered by Databricks Lakebase, it provides low-latency access to feature data at a high scale while maintaining consistency with your offline feature tables.
+
+The primary use cases for Online Feature Stores include:
+
+- Serving features to real-time applications like recommendation systems, fraud detection, and personalization engines using Feature Serving Endpoints.
+- Automatic feature lookup for real-time inference in model serving endpoints.
 ### Build a multi-agent system
 One can orchestrate a multiagent system, with an agent calling tools, and a supervisor LLM deciding what the appropriate tools are. In this example, an agent has access to a genie space to get data points. However, one can also give it access to a knowledge store, MCP server, call an ML model or use any other tool.
 #### Multi-agent system with a Genie space
