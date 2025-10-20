@@ -7,7 +7,7 @@ Welcome to our Databricks hands-on session! These materials have all the tools a
 ### Register and retrieve model 
 
 ### Feature stores
-The Databricks Feature Store provides a central registry for features used in your AI and ML models.  When you use features from the feature store to train models, the model automatically tracks lineage to the features that were used in training. At inference time, the model automatically looks up the latest feature values. The feature store also provides on-demand computation of features for real-time applications. 
+The Databricks Feature Store provides a central registry for features used in your AI and ML models.  When you use features from the feature store to train models, the model automatically tracks lineage to the features that were used in training. At inference time, the model automatically looks up the latest feature values. The feature store also provides on-demand computation of features for real-time applications. [See Feature Store concepts here](https://docs.databricks.com/aws/en/machine-learning/feature-store/concepts)
 
 ### Set up an online feature store
 Databricks Online Feature Stores are a high-performance, scalable solution for serving feature data to online applications and real-time machine learning models. 
