@@ -12,7 +12,9 @@ One can perform hyperparameter tuning with Mlflow's integrations with Optuna. Op
 - [See this example notebook](https://docs.databricks.com/aws/en/notebooks/source/machine-learning/optuna-mlflow.html)
 
 ### Register and retrieve model 
+MLflow 3 introduces significant enhancements to MLflow models by introducing a new, dedicated LoggedModel object with its own metadata such as metrics and parameters. For more info on [LoggedModels see the documentation here](https://docs.databricks.com/aws/en/mlflow/logged-model).
 
+One can then register a model in Unity Catalog. Databricks provides a hosted version of MLflow Model Registry in Unity Catalog. Models in Unity Catalog extends the benefits of Unity Catalog to ML models, including centralized access control, auditing, lineage, and model discovery across workspaces. MLflow 3 makes significant enhancements to the MLflow Model Registry in Unity Catalog, allowing your models to directly capture data like parameters and metrics and make them available across all workspaces and experiments.
 
 ### Feature stores
 The Databricks Feature Store provides a central registry for features used in your AI and ML models.  When you use features from the feature store to train models, the model automatically tracks lineage to the features that were used in training. At inference time, the model automatically looks up the latest feature values. The feature store also provides on-demand computation of features for real-time applications. 
