@@ -56,7 +56,12 @@ mlflow 3 on Databricks provides solutions for GenAI evaluation and classical ML 
 For classical ML, `mlflow.evaluate()` provides common metrics out of the box or one can use custom metrics. Example code can be found [here](https://github.com/zuzanakovacsova/ryanair_databricks_workshop/blob/main/classic_ml_evaluation.py). \
 \
 The promotion/comparison of new model versions can be automated with Deployment jobs. Deployment jobs automate evaluation, gated approval, and deployment for each new Unity Catalog model version by linking the model to a Lakeflow Job, with status and history tracked on the model/version pages. Approval can either be based on the passing of metrics, or a person can validate them and approve the deployment of the model. Find out more about Deployment jobs, and example notebooks, in the [docs](https://docs.databricks.com/aws/en/mlflow/deployment-job).
+
 ### Monitoring
+One can setup production monitoring on your deployed models. You can schedule scorers to automatically evaluate a sample of your production traffic. Scorer assessment results are automatically attached as feedback to evaluated traces. This can be done through the UI, from the serving endpoint view you can select Monitor your agent (beta) and then selecting scorers. 
+You can also do this through code, see here for example snippets on adding scroers to your production traces.
+[See documentation here](https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/production-monitoring#use-built-in-llm-judges)
+
 ### Deploy model in an app
 Once your model is served, once can query it from an app in Databricks Apps. To deploy lakehouse apps, you only need the source code (many frameworks are supported, eg. Dash, Streamlit, Node.js...) and when creating the compute,  give your app access to the Databricks resources it might have to query. For example, if you want to deploy the agent that is calling a Genie space in your app, you need to add the endpoint, the Genie space and the corresponding warehouse as an [app resource](https://docs.databricks.com/aws/en/dev-tools/databricks-apps/resources). 
 #### Chatbot app
