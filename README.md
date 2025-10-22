@@ -21,9 +21,12 @@ The primary use cases for Online Feature Stores include:
 - Serving features to real-time applications like recommendation systems, fraud detection, and personalization engines using Feature Serving Endpoints.
 - Automatic feature lookup for real-time inference in model serving endpoints.
 
-### Build a multi-agent system
-One can orchestrate a multiagent system, with an agent calling tools, and a supervisor LLM deciding what the appropriate tools are. In this example, an agent has access to a genie space to get data points. However, one can also give it access to a knowledge store, MCP server, call an ML model or use any other tool. \
-An example of how to crate custom tools can be found [here](https://github.com/zuzanakovacsova/ryanair_databricks_workshop/blob/main/create_tools.py). After you have created the tools, you can use Playground to provide an agent access to those tools. Note that not all LLMs available in the Playground will be able to use tools, you have to pick one with the "Tools enabled" tag, for example GPT OSS 20B. You can then add your UC registered tools, customise the prompt and toggle judges. When ready, you can export the code to deploy your new agent.
+### Build an agent system
+Agents in Databricks are built using the Mosaic AI Agent framework, with monitoring being handled with MLflow. You can give your agent access to various tools, such as knowledge store, MCP servers and various tools. \
+An example of how to crate custom tools can be found [here](https://github.com/zuzanakovacsova/ryanair_databricks_workshop/blob/main/create_tools.py). After you have created the tools, you can use Playground to provide an agent access to those tools. Note that not all LLMs available in the Playground will be able to use tools, you have to pick one with the "Tools enabled" tag, for example GPT OSS 20B. You can then add your UC registered tools, customise the prompt and toggle judges. When ready, you can export the code to deploy your new agent. \
+If you want to code an agent from scratch, there's good example notebooks in [the docs](https://docs.databricks.com/aws/en/generative-ai/agent-framework/author-agent). \
+One situation where starting from code ratehr than from the Playground is building MCP-server calling agents, as Playground does not support the export to code option for those agents yet. Databricks can connect to external MCP servers, Databricks-managed MCP servers or custom ones. Example notebooks are in [the docs](https://docs.databricks.com/aws/en/generative-ai/mcp/). If connecting to external servers, you need to have privileges to create external connections UC and create an HTTP connection. 
+
 #### Multi-agent system with a Genie space
 If you are interested in your agent being able to call a Genie space as a tool, you can import [this notebook](https://docs.databricks.com/aws/en/notebooks/source/generative-ai/langgraph-multiagent-genie.html) for example code. \
 Make sure to fill all the `TODO` sections.
