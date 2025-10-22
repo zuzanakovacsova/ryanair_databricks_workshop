@@ -3,6 +3,9 @@
 Welcome to our Databricks hands-on session! These materials have all the tools and documentation you need to build and productionise classical ML models and GenAI agents. 
 
 ## End-to-end model deployment pipeline
+[Example Notebook](https://docs.databricks.com/aws/en/notebooks/source/mlflow/mlflow-classic-ml-e2e-mlflow-3.html)
+This tutorial covers the full lifecycle of experimentation, training, tuning, registration, evaluation, and deployment for a classic ML modeling project. It shows you how to use MLflow to keep track of every aspect of the model development and deployment processes.
+
 ### Hyperparameter tuning (optional)
 One can perform hyperparameter tuning with Mlflow's integrations with Optuna. Optuna is an open-source Python library for hyperparameter tuning. You setup an objective function and determine the hyperparameter space to search over. One can then configure an Optuna study object and run the tuning algorithm by calling the optimize function of the Study object. A study corresponds to an optimization task, i.e., a set of trials. 
 
