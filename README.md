@@ -2,7 +2,7 @@
 
 Welcome to our Databricks hands-on session! These materials have all the tools and documentation you need to build and productionise classical ML models and GenAI agents. 
 
-## End-to-end model deployment pipeline
+### End-to-end model deployment pipeline
 ### Hyperparameter tuning (optional)
 ### Register and retrieve model 
 
