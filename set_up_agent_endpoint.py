@@ -10,6 +10,6 @@
 from databricks import agents
 
 # Deploy a UC-registered agent (model name + version)
-deployment = agents.deploy("<your model, e.g. catalog.schema.agent_model>", <model version integer>) #fill in
+deployment = agents.deploy("<your model, e.g. catalog.schema.agent_model>", "<model version integer>") #fill in
 
 print("Query URL:", deployment.query_endpoint) #your endpoint
