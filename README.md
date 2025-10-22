@@ -2,7 +2,7 @@
 
 Welcome to our Databricks hands-on session! These materials have all the tools and documentation you need to build and productionise classical ML models and GenAI agents. 
 
-## End-to-end model deployment pipeline
+### End-to-end model deployment pipeline
 [Example Notebook](https://docs.databricks.com/aws/en/notebooks/source/mlflow/mlflow-classic-ml-e2e-mlflow-3.html)
 This tutorial covers the full lifecycle of experimentation, training, tuning, registration, evaluation, and deployment for a classic ML modeling project. It shows you how to use MLflow to keep track of every aspect of the model development and deployment processes.
 
