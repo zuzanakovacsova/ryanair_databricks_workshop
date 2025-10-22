@@ -4,7 +4,12 @@ Welcome to our Databricks hands-on session! These materials have all the tools a
 
 ## End-to-end model deployment pipeline
 ### Hyperparameter tuning (optional)
+One can perform hyperparameter tuning with Mlflow's integrations with Optuna. Optuna is an open-source Python library for hyperparameter tuning. You setup an objective function and determine the hyperparameter space to search over. One can then configure an Optuna study object and run the tuning algorithm by calling the optimize function of the Study object. A study corresponds to an optimization task, i.e., a set of trials. 
+
+- [See this example notebook](https://docs.databricks.com/aws/en/notebooks/source/machine-learning/optuna-mlflow.html)
+
 ### Register and retrieve model 
+
 
 ### Feature stores
 The Databricks Feature Store provides a central registry for features used in your AI and ML models.  When you use features from the feature store to train models, the model automatically tracks lineage to the features that were used in training. At inference time, the model automatically looks up the latest feature values. The feature store also provides on-demand computation of features for real-time applications. 
